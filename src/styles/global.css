@@ -1,0 +1,51 @@
+@import url("https://use.typekit.net/iya6krz.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap");
+
+:root {
+    /* VARIABLES */
+    /* Colors */
+    --green: #badc58;
+    --green-light: #d4fb64;
+    --green-dark: #92d262;
+    --green-darkest: #53a547;
+
+    --title-color: #1d164d;
+    --subtitle-color: #9e9baf;
+
+    /* Font-Family */
+    --title-font-family: "Montserrat", sans-serif;
+    --text-font-family: "muli", sans-serif;
+
+    /* Font-Size */
+    --title-font-size: 10vw;
+    --subtitle-font-size: 8vw;
+    --text-font-size: 4vw;
+}
+
+html {
+    font-family: "muli";
+}
+
+h1 {
+    font-size: var(--title-font-size);
+    font-family: var(--title-font-family);
+    color: var(--title-color);
+}
+h2 {
+    font-size: var(--subtitle-font-size);
+    font-family: var(--title-font-family);
+    color: var(--title-color);
+}
+
+p {
+    font-size: var(--text-font-size);
+    font-family: var(--subtitle-font-family);
+    color: var(--subtitle-color);
+}
+@media (min-width: 480px) {
+    :root {
+        --title-font-size: 48px;
+        --subtitle-font-size: 32px;
+        --text-font-size: 16px;
+    }
+}
