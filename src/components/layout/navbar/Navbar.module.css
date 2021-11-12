@@ -1,0 +1,137 @@
+.nav {
+    padding: 1.5em 1em;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    align-items: center;
+    
+}
+
+
+.logo {
+    color: var(--green);
+    width: min-content;
+}
+
+.mobile_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list_show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--text-font-family);
+    font-weight: bold;
+    font-size: 2.2em;
+
+    visibility: visible;
+    top: 0;
+    right: 0;
+    opacity: 1;
+
+}
+
+.list_hide{
+    display: none;
+    visibility: hidden;
+    top: 0;
+    right: -100px;
+    opacity: 0;
+
+}
+.item {
+    cursor: pointer;
+    color: var(--white);
+    transition: color 0.3s;
+}
+.item:hover {
+    color: var(--green-darkest);
+}
+
+.btn {
+    box-shadow: rgba(33, 35, 38, 0.15) 0px 10px 10px -10px;
+
+    color: var(--green);
+    background-color: var(--white);
+    padding: 0.5em 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn:hover {
+    box-shadow: rgba(33, 35, 38, 0.2) 0px 10px 10px -10px;
+    color: var(--green-darkest);
+}
+
+.mobile_menu .list_show {
+    width: 100vw;
+    height: 100vh;
+    gap: 2em;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    position: absolute;
+    
+    background-color: var(--green);
+    padding-left: 5%;
+}
+.mobile_menu .list_show::before {
+    content: "";
+    background-color: var(--green-dark);
+    backdrop-filter: blur(50px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5%;
+    opacity: 0.5;
+    animation: left-border 1s;
+}
+
+
+.menu_actions svg {
+    width: 40px;
+    height: 40px;
+}
+.menu_actions {
+    position: relative;
+}
+
+.open {
+    z-index: 0;
+    background-color: var(--green);
+    padding: 0.2em;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.close {
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+@media (min-width: 1200px) {
+    
+    .nav {
+        padding: 32px 137px;
+    }
+    .web_menu .list_show {
+        font-size: calc(var(--text-font-size) * 1.2);
+        align-items: center;
+        gap: 1em;
+        color: var(--black);
+    }
+    
+}

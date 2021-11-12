@@ -8,22 +8,29 @@
     --green-light: #d4fb64;
     --green-dark: #92d262;
     --green-darkest: #53a547;
+    --white: #ffffff;
+    --black: #000000;
+    --body-color: #f9ffe7;
 
     --title-color: #1d164d;
     --subtitle-color: #9e9baf;
 
     /* Font-Family */
     --title-font-family: "Montserrat", sans-serif;
-    --text-font-family: "muli", sans-serif;
+    --text-font-family: "Muli", sans-serif;
 
     /* Font-Size */
     --title-font-size: 10vw;
     --subtitle-font-size: 8vw;
     --text-font-size: 4vw;
+
+    /* Heights */
+    --nav-height: 5em;
+    --footer-height: 2em;
 }
 
 html {
-    font-family: "muli";
+    font-family: "Muli";
 }
 
 h1 {
@@ -42,7 +49,35 @@ p {
     font-family: var(--subtitle-font-family);
     color: var(--subtitle-color);
 }
-@media (min-width: 480px) {
+
+svg{
+    fill: var(--white);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--green);
+    transition: background-color 0.8s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--green-darkest);
+}
+
+@media (min-width: 520px) {
+    :root {
+        --title-font-size: 48px;
+        --subtitle-font-size: 32px;
+        --text-font-size: 16px;
+    }
+}
+@media (min-width: 1200px) {
     :root {
         --title-font-size: 48px;
         --subtitle-font-size: 32px;

@@ -1,0 +1,44 @@
+section{
+    padding: 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    max-height: 768px;
+}
+
+.divider{
+    height: 2px;
+    background: linear-gradient(270deg, var(--green), var(--green-light));
+    
+}
+
+
+.presentation {
+    gap:1.5em;
+    text-align: center;
+    height:20em;
+}
+.presentation h1{
+}
+
+.presentation img{
+    position:absolute;
+    height:25.2em;
+    width:100%;
+    object-fit: cover;
+    z-index: -5;
+    opacity: .4;
+    filter: blur(4px);
+    top: 0;
+    object-position: 0 0;
+    
+}
+
+.presentation form{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    height:fit-content;
+}
