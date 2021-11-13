@@ -1,6 +1,6 @@
-import '../layout/button/Button.css'
+import './Button.css'
 
-function SubmitButton(props) {
+function Button(props) {
     return (
         <div>
             <button className='btn'>{props.children}</button>
@@ -8,4 +8,4 @@ function SubmitButton(props) {
     )
 }
 
-export default SubmitButton;
+export default Button;

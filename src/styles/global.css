@@ -10,7 +10,7 @@
     --green-darkest: #53a547;
     --white: #ffffff;
     --black: #000000;
-    --body-color: #f9ffe7;
+    --green-white: #efffbe;
 
     --title-color: #1d164d;
     --subtitle-color: #9e9baf;
@@ -25,7 +25,7 @@
     --text-font-size: 4vw;
 
     /* Heights */
-    --nav-height: 5em;
+    --nav-height: 4em;
     --footer-height: 2em;
 }
 
@@ -36,15 +36,14 @@ html {
 h1 {
     font-size: var(--title-font-size);
     font-family: var(--title-font-family);
-    color: var(--title-color);
+    
 }
-h2 {
-    font-size: var(--subtitle-font-size);
-    font-family: var(--title-font-family);
+h1, h2, h3,h4,h5,h6{
     color: var(--title-color);
 }
 
 p {
+    line-height: 150%;
     font-size: var(--text-font-size);
     font-family: var(--subtitle-font-family);
     color: var(--subtitle-color);
@@ -70,14 +69,7 @@ svg{
     background-color: var(--green-darkest);
 }
 
-@media (min-width: 520px) {
-    :root {
-        --title-font-size: 48px;
-        --subtitle-font-size: 32px;
-        --text-font-size: 16px;
-    }
-}
-@media (min-width: 1200px) {
+@media (min-width: 403px) {
     :root {
         --title-font-size: 48px;
         --subtitle-font-size: 32px;

@@ -1,0 +1,34 @@
+.card{
+    overflow: hidden;
+     height: clamp(100px, 20vw, 176px);
+     width: clamp(233px, 40vw, 413px);
+     display: flex;
+     box-shadow: rgba(0, 0, 0, 0.05) 2.4px 2.4px 5px;
+    border-radius: 5px;
+
+}
+
+.card .text{
+    line-height: 15px;
+    font-size: clamp(11px ,1.8vw, 16px);
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding-left: 5%;
+    padding-right: 10%;
+    justify-content:center;
+    text-align: start;
+
+}
+
+.img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+

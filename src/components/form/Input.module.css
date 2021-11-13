@@ -8,6 +8,7 @@
     font-size: var(--text-font-size);
     padding: 0.7rem;
     max-height:52px;
+    width:clamp(180px, 40vw, 343px);
     border: none;
     border-radius:5px;
     outline: 2px solid var(--green);
@@ -26,3 +27,4 @@
     color: var(--subtitle-color);
   }
   
+

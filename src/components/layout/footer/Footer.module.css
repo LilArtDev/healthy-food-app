@@ -1,0 +1,21 @@
+.footer{
+    width: 100%;
+    height:var(--nav-height);
+    display: flex;
+    flex-flow: column;
+    justify-content:center;
+    align-items:center;
+    padding:0 15%;
+    border-top: 1px solid gainsboro;
+}
+
+.footer, .footer p{
+    font-size: clamp(8px,2vw,14px);
+}
+.footer .links{
+    display: flex;
+    align-items: center;
+    width:100%;
+    justify-content:center;
+    gap: 1em;
+}

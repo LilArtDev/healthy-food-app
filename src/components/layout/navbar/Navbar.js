@@ -2,13 +2,16 @@ import { useState } from 'react'
 import styles from './Navbar.module.css'
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom'
-import Fade from 'react-reveal'
+import Fade from 'react-reveal/Fade'
 import { MdOutlineMenuOpen, MdOutlineClose } from 'react-icons/md'
 
 function Navbar() {
     const isMobile = useMediaQuery({
-        query: '(max-width: 610px)'
+        query: '(max-width: 748px)'
     })
+
+    const navTest = true
+
 
     const [showMenu, setShowMenu] = useState(false);
 
@@ -17,31 +20,34 @@ function Navbar() {
     }
 
     return (
-        <nav className={styles.nav}>
+        <nav className={!navTest ? styles.nav : styles.nav_alt}>
             <Fade left>
                 <h2 className={styles.logo}>HealthyFood</h2>
             </Fade>
             <Fade right>
                 <div className={isMobile ? styles.mobile_menu : styles.web_menu}>
-
-                    <ul className={!isMobile ? styles.list_show : showMenu ? styles.list_show : styles.list_hide}>
-                        <li>
-                            <a href="#" className={styles.item}>Recipes</a>
-                            {/* <Link to="/">Recipes</Link> */}
-                        </li>
-                        <li>
-                            <a href="#" className={styles.item}> Blog</a>
-                            {/* <Link to="/">Blog</Link> */}
-                        </li>
-                        <li>
-                            <a href="#" className={styles.item}> Join</a>
-                            {/* <Link to="/">Join</Link> */}
-                        </li>
-                        <li>
-                            <a href="#" className={styles.btn}>Registre-se</a>
-                            {/* <Link to="/">Registre-Se</Link> */}
-                        </li>
-                    </ul>
+                    <Fade right when={isMobile ? showMenu : true} collapse={isMobile}>
+                        <ul className={styles.list}>
+                            <Fade right>
+                                <li>
+                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false) }}>Recipes</a>
+                                    {/* <Link to="/">Recipes</Link> */}
+                                </li>
+                                <li>
+                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false) }}> Blog</a>
+                                    {/* <Link to="/">Blog</Link> */}
+                                </li>
+                                <li>
+                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false) }}> Join</a>
+                                    {/* <Link to="/">Join</Link> */}
+                                </li>
+                                <li>
+                                    <a href="#" className={styles.btn} onClick={() => { setShowMenu(false) }}>Register</a>
+                                    {/* <Link to="/">Registre-Se</Link> */}
+                                </li>
+                            </Fade>
+                        </ul>
+                    </Fade>
 
                     {isMobile ? (
                         <div className={styles.menu_actions} onClick={toggleShowMenu}>
@@ -50,7 +56,7 @@ function Navbar() {
                     ) : false}
 
                 </div >
-            </Fade>
+            </Fade >
         </nav >
 
     )
