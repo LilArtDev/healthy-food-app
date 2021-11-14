@@ -1,9 +1,9 @@
-import '../layout/button/Button.css'
+import styles from '../layout/button/Button.module.css'
 
 function SubmitButton(props) {
     return (
         <div>
-            <button className='btn'>{props.children}</button>
+            <input type="submit" className={`${styles.btn} ${styles[props.customClass]}`} />
         </div>
     )
 }

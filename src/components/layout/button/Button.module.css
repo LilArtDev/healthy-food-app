@@ -20,3 +20,8 @@
     height:25px;
   }
   
+  .shadow{
+    box-shadow: var(--green) 0px 10px 10px -10px;
+  }
+
+  

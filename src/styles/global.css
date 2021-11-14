@@ -20,9 +20,13 @@
     --text-font-family: "Muli", sans-serif;
 
     /* Font-Size */
-    --title-font-size: 10vw;
-    --subtitle-font-size: 8vw;
-    --text-font-size: 4vw;
+    --title-font-size:clamp(36px, 10vw, 48px) ;
+    --subtitle-font-size:clamp(16px, 8vw, 32px);
+    --text-font-size: clamp(10px, 4vw, 16px);
+    
+    /* --title-font-size: 48px;
+        --subtitle-font-size: 32px;
+        --text-font-size: 16px; */
 
     /* Heights */
     --nav-height: 4em;
@@ -31,12 +35,18 @@
 
 html {
     font-family: "Muli";
+    
 }
 
 h1 {
     font-size: var(--title-font-size);
     font-family: var(--title-font-family);
     
+}
+
+h2{
+    font-size: var(--subtitle-font-size);
+    font-family: var(--title-font-family);
 }
 h1, h2, h3,h4,h5,h6{
     color: var(--title-color);
@@ -56,23 +66,22 @@ svg{
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
+    
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--white);
+    background-color: var(--green-white);
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--green);
-    transition: background-color 0.8s;
+    border-radius: 20em;
+    transition: background 5s;
+
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--green-darkest);
 }
 
-@media (min-width: 403px) {
-    :root {
-        --title-font-size: 48px;
-        --subtitle-font-size: 32px;
-        --text-font-size: 16px;
-    }
+@media (min-width: 400px) {
+    
 }

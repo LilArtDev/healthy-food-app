@@ -1,0 +1,85 @@
+/* Join */
+
+.join {
+    width:100%;
+    min-height: 400px;
+    height:80vw;
+    max-height: 768px;
+    position: relative;
+    align-items:flex-start;
+    justify-content:center;
+    text-align: start;
+}
+.text{
+    margin-left:11.5%;
+}
+.text h1{
+    font-size: clamp(24px,8vw,32px);
+    width: clamp(240px,90%,412px);
+    text-align:start;
+
+}
+.img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity: .4;
+    z-index: -5;
+    top: 0;
+    right: 0;
+    object-fit:cover;
+    object-position:right top;
+    
+    filter: blur(2px);
+    transition: all 1.5s;
+    transition-property: width,opacity,filter;
+}
+
+
+.form{
+    display:flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1em;
+    height:fit-content;
+}
+
+
+
+.text{
+    width:70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;    
+    gap: 1em;
+}
+
+.btn{
+    box-shadow: var(--green) 0px 10px 10px -10px;
+}
+
+
+
+
+@media (min-width: 740px){
+    .join{
+        height: 600px;
+    }
+    .img{
+        filter: none;
+        width:55%;
+    }
+   
+   
+}
+
+@media (min-width: 1000px){
+    .join{
+        height: 100vh;
+    }
+    .img{
+        opacity: 1;
+    }
+    
+}

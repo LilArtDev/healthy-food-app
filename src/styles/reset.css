@@ -1,16 +1,12 @@
 * {
-    width: fit-content;
-    height: fit-content;
-    margin: 0;
+    margin:0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-*:focus {
-    outline: none;
-}
+
 a,
 a:visited {
     text-decoration: none;
@@ -22,4 +18,6 @@ ul {
 
 html {
     scroll-behavior: smooth;
+    width:100vw;
+    overflow-x: hidden;
 }

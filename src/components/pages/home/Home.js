@@ -1,10 +1,10 @@
 import './Home.css'
-import { About, Blog, Join, Ready, Recipes } from './sections/index'
+import { About, Blog, Join, Presentation, Recipes } from './sections/index'
 
 function Home() {
     return (
         <div className="home">
-            <Ready />
+            <Presentation />
             <Recipes />
             <About />
             <Blog />

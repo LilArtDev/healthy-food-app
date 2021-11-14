@@ -10,7 +10,7 @@
 }
 
 .footer, .footer p{
-    font-size: clamp(8px,2vw,14px);
+    font-size: clamp(10px,2vw,14px);
 }
 .footer .links{
     display: flex;

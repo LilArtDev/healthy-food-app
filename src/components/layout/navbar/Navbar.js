@@ -10,7 +10,7 @@ function Navbar() {
         query: '(max-width: 748px)'
     })
 
-    const navTest = true
+    const navTest = false
 
 
     const [showMenu, setShowMenu] = useState(false);
