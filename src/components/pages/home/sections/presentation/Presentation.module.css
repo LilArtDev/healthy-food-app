@@ -22,7 +22,7 @@
     position:absolute;
     width:100%;
     height:100%;
-    opacity: .4;
+    opacity: .3;
     z-index: -5;
     top: 0;
     right: 0;
@@ -49,15 +49,8 @@
     .img{
         width: 60%;
         filter: none;
-    }
-    
-}
-
-@media (min-width: 1000px){
-    .img{
         opacity: 1;
-    }
 
+    }
     
 }
-

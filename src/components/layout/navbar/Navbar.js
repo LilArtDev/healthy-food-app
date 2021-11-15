@@ -9,18 +9,25 @@ function Navbar() {
     const isMobile = useMediaQuery({
         query: '(max-width: 748px)'
     })
+    const [nav, setNav] = useState(false)
 
-    const navTest = false
-
+    const changeNav = () => {
+        if (window.scrollY >= 20) {
+            setNav(true)
+        }
+        else {
+            setNav(false)
+        }
+    }
 
     const [showMenu, setShowMenu] = useState(false);
 
     function toggleShowMenu() {
         setShowMenu(!showMenu);
     }
-
+    window.addEventListener('scroll', changeNav)
     return (
-        <nav className={!navTest ? styles.nav : styles.nav_alt}>
+        <nav className={`${styles.nav} ${nav ? styles.alt : ""}`}>
             <Fade left>
                 <h2 className={styles.logo}>HealthyFood</h2>
             </Fade>

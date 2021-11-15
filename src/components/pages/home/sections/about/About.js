@@ -1,6 +1,8 @@
 import styles from './About.module.css'
 import Button from '../../../../layout/button/Button'
 import Img from '../../../../../assets/bloco_services.svg'
+
+
 function About() {
     return (
         <section className={styles.about}>
@@ -15,7 +17,6 @@ function About() {
                 <p>A small river named Duden flows by their place and
                     supplies it with the necessary regelialia.</p>
                 <Button customClass="shadow">Know More</Button>
-
             </div>
 
         </section>

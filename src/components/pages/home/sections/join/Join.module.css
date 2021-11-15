@@ -28,7 +28,7 @@
     top: 0;
     right: 0;
     object-fit:cover;
-    object-position:right top;
+    object-position:left top;
     
     filter: blur(2px);
     transition: all 1.5s;
@@ -39,7 +39,7 @@
 .form{
     display:flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 1em;
     height:fit-content;
 }
@@ -68,7 +68,7 @@
     }
     .img{
         filter: none;
-        width:55%;
+        width:80%;
     }
    
    
@@ -80,6 +80,8 @@
     }
     .img{
         opacity: 1;
+        width:55%;
+
     }
     
 }
