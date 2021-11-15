@@ -25,6 +25,13 @@
     width:100%;
     max-width: 1200px;
     margin-top: 1em;
+    height:max-content;
+}
+
+.swiper_slide{
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width: 740px) {

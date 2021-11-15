@@ -1,7 +1,7 @@
 .card{
     overflow: hidden;
-    height: clamp(80px, 20vh, 220px);
-    width: clamp(280px, 35vw, 480px);
+    height: clamp(120px, 20vw, 180px);
+    width: clamp(280px, 45vw, 480px);
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.05) 2.4px 2.4px 5px;
     border-radius: 5px;
@@ -41,7 +41,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-
 }
 
 
