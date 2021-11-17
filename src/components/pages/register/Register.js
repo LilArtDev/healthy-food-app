@@ -24,7 +24,7 @@ function Register() {
     const userSchema = schema;
 
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, setError, formState: { errors } } = useForm({
         mode: 'onChange',
         resolver: yupResolver(userSchema),
     });
@@ -38,25 +38,52 @@ function Register() {
         }
     }
 
-    async function submitCep() {
-        const e = await getAddress(cep);
-        setAddress(prevState => ({
-            ...prevState,
-            district: e.data.bairro,
-            street: e.data.logradouro,
-            city: e.data.localidade,
-            state: e.data.uf
-        }));
 
-    }
 
     useEffect(() => {
-        if (!errors.cep && cep.length === 8) {
+        const submitCep = async () => {
+            try {
+                const e = await getAddress(cep);
+                setAddress(prevState => ({
+                    ...prevState,
+                    district: e.data.bairro,
+                    street: e.data.logradouro,
+                    city: e.data.localidade,
+                    state: e.data.uf
+                }));
+            } catch (e) {
+                setAddress(prevState => ({
+                    ...prevState,
+                    district: "",
+                    street: "",
+                    city: "",
+                    state: "",
+                }));
+                setError("cep", {
+                    type: "cep",
+                    message: e.message,
+                });
+            }
+
+        }
+
+        if (cep.length === 8) {
             submitCep()
         }
-    })
+    }, [cep, setError])
+
 
     const submitForm = data => {
+        if (address.city.length < 1) {
+            setError("cep", {
+                type: "cep",
+                message: 'Invalid CEP',
+            });
+
+
+            return false
+        }
+
         const User = {
             birthday: data.birthday,
             cep: data.cep,
@@ -87,29 +114,29 @@ function Register() {
                             Name
                             <Input customClass={errors.name ? "error" : ""} type="text" name="name" placeholder="Enter your name" handleRef={register('name')} />
                         </label>
-                        <p className={styles.error}>{errors?.name?.message}</p>
+                        <p className={styles.error}>{errors.name?.message}</p>
                         <label >
                             Birthday
                             <Input customClass={errors.birthday ? "error" : ""} type="date" name="birthdate" placeholder="00/00/00" handleRef={register('birthday')} />
                         </label>
-                        <p className={styles.error}>{errors?.birthday?.message}</p>
+                        <p className={styles.error}>{errors.birthday?.message}</p>
                         <label >
                             CPF
                             <Input customClass={errors.cpf ? "error" : ""} type="text" name="cpf" placeholder="XXX.XXX.XXX-XX" handleRef={register('cpf')} />
                         </label>
-                        <p className={styles.error}>{errors?.cpf?.message}</p>
+                        <p className={styles.error}>{errors.cpf?.message}</p>
                         <label >
                             CEP
                             <Input customClass={errors.cep ? "error" : ""} type="text" name="cep" placeholder="XXXXX-XXX" handleRef={register('cep')} handleOnBlur={handleSetCep} />
                         </label>
-                        <p className={styles.error}>{errors?.cep?.message}</p>
+                        <p className={styles.error}>{errors.cep?.message}</p>
                         <label>Address</label>
                         <div className={styles.address}>
-                            <Input className="long" customClass="disabled" type="text" name="street" placeholder="Street" value={address.street} handleRef={register('street')} disabled={true} />
-                            <Input className="long" customClass="disabled" type="text" name="district" placeholder="District" value={address.district} handleRef={register('district')} disabled={true} />
-                            <Input className="long" customClass="disabled" type="text" name="city" placeholder="City" value={address.city} handleRef={register('city')} disabled={true} />
+                            <Input className="long" customClass="disabled" type="text" name="street" placeholder="Street" value={address.street ? address.street : ""} handleRef={register('street')} disabled={true} />
+                            <Input className="long" customClass="disabled" type="text" name="district" placeholder="District" value={address.district ? address.district : ""} handleRef={register('district')} disabled={true} />
+                            <Input className="long" customClass="disabled" type="text" name="city" placeholder="City" value={address.city ? address.city : ""} handleRef={register('city')} disabled={true} />
                             <div className={styles.inline}>
-                                <Input className="short" customClass="disabled" type="text" name="state" placeholder="State" value={address.state} handleRef={register('state')} disabled={true} />
+                                <Input className="short" customClass="disabled" type="text" name="state" placeholder="State" value={address.state ? address.state : ""} handleRef={register('state')} disabled={true} />
                                 <Input className="short" customClass={errors.houseNumber ? "error" : " "} type="text" name="houseNumber" placeholder="Number" handleRef={register('houseNumber')} />
                             </div>
                             <p className={styles.error_short}>{errors?.houseNumber?.message}</p>
