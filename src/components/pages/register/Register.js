@@ -102,6 +102,8 @@ function Register() {
 
         cookies.set('data', User);
         console.log(cookies.get('data'));
+
+        window.alert("Successfully registered user")
     };
 
     return (
