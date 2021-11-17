@@ -49,13 +49,13 @@ function Navbar() {
                         <ul className={styles.list}>
                             <Fade right>
                                 <li>
-                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false); }}>RECIPES</a>
+                                    <Link to="#" className={styles.item} onClick={() => { setShowMenu(false); }}>RECIPES</Link >
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false); }}>BLOG</a>
+                                    <Link to="#" className={styles.item} onClick={() => { setShowMenu(false); }}>BLOG</Link >
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false); }}>JOIN</a>
+                                    <Link to="#" className={styles.item} onClick={() => { setShowMenu(false); }}>JOIN</Link >
                                 </li>
                                 <li>
                                     <Fade top>
