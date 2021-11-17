@@ -9,7 +9,7 @@ function Join() {
             <div className={styles.text}>
                 <h1>Join our membership to get special offer</h1>
                 <form className={styles.form}>
-                    <Input type="text" name="email" placeholder="Enter your email address" />
+                    <Input type="email" name="email" placeholder="Enter your email address" />
                     <SubmitButton customClass="shadow">Join</SubmitButton>
                 </form>
             </div>

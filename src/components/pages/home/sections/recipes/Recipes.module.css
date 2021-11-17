@@ -1,18 +1,18 @@
 .recipes{
-    width:100%;
-    min-height:fit-content;
     align-items:center;
     justify-content:center;
     text-align: center;
+    width:100%;
+    min-height:fit-content;
     transition: height .5s;
 }
 
 .text{
     display: flex;
     flex-direction: column;
-    gap: 1em;
     align-items: center;
     text-align: center; 
+    gap: 1em;
     margin: 0 11vw;
 }
 

@@ -1,4 +1,3 @@
-import './Home.css'
 import { About, Blog, Join, Presentation, Recipes } from './sections/index'
 
 function Home() {

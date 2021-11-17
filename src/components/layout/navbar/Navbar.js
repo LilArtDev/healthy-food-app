@@ -10,6 +10,8 @@ function Navbar() {
         query: '(max-width: 748px)'
     })
     const [nav, setNav] = useState(false)
+    const [home, setHome] = useState(true)
+    const [showMenu, setShowMenu] = useState(false);
 
     const changeNav = () => {
         if (window.scrollY >= 20) {
@@ -20,16 +22,26 @@ function Navbar() {
         }
     }
 
-    const [showMenu, setShowMenu] = useState(false);
+
 
     function toggleShowMenu() {
         setShowMenu(!showMenu);
     }
-    window.addEventListener('scroll', changeNav)
+    window.addEventListener('scroll', changeNav);
+    window.onload = (event) => {
+        if (window.location.pathname === "/" || window.location.pathname === "") {
+            setHome(true)
+        }
+        else {
+            setHome(false)
+        }
+    };
     return (
-        <nav className={`${styles.nav} ${nav ? styles.alt : ""}`}>
+        <nav className={`${styles.nav} ${nav ? styles.alt : home ? "" : styles.alt}`}>
             <Fade left>
-                <h2 className={styles.logo}>HealthyFood</h2>
+                <Link to="/">
+                    <h2 className={styles.logo}>HealthyFood</h2>
+                </Link>
             </Fade>
             <Fade right>
                 <div className={isMobile ? styles.mobile_menu : styles.web_menu}>
@@ -37,20 +49,18 @@ function Navbar() {
                         <ul className={styles.list}>
                             <Fade right>
                                 <li>
-                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false) }}>Recipes</a>
-                                    {/* <Link to="/">Recipes</Link> */}
+                                    <Link to="/" className={styles.item} onClick={() => { setShowMenu(false) }}>RECIPES</Link>
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false) }}> Blog</a>
-                                    {/* <Link to="/">Blog</Link> */}
+                                    <Link to="/" className={styles.item} onClick={() => { setShowMenu(false) }}>BLOG</Link>
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.item} onClick={() => { setShowMenu(false) }}> Join</a>
-                                    {/* <Link to="/">Join</Link> */}
+                                    <Link to="/" className={styles.item} onClick={() => { setShowMenu(false) }}>JOIN</Link>
                                 </li>
                                 <li>
-                                    <a href="#" className={styles.btn} onClick={() => { setShowMenu(false) }}>Register</a>
-                                    {/* <Link to="/">Registre-Se</Link> */}
+                                    <Fade top>
+                                        <Link to={home ? "/register" : "/"} className={styles.btn} onClick={() => { setShowMenu(false); setHome(!home) }}>{!home ? "HOME" : "REGISTER"}</Link>
+                                    </Fade>
                                 </li>
                             </Fade>
                         </ul>

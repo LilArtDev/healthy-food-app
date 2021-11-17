@@ -1,43 +1,35 @@
 .nav {
-    font-size: calc(var(--text-font-size) * 1.3);
     position: fixed;
     z-index: 100;
-    top: 0;
-    width: 100vw;
-    padding: 2em 11.5%;
-    height: var(--nav-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
+    height: var(--nav-height);
+    padding: 2em 11.5%;
+    background-color: rgba(255, 255, 255, 0);
     box-shadow: rgba(33, 35, 38, 0) 0px 10px 10px -10px;
-    background-color:rgba(255, 255, 255, 0);
+    font-size: calc(var(--text-font-size) * 1.1);
     transition: all 0.3s 0s;
     transition-property: background-color, box-shadow;
-    
-}
-.alt {
-    font-size: calc(var(--text-font-size) * 1.3);
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    padding: 2em 11.5%;
-    width: 100vw;
-    height: var(--nav-height);
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+
+.alt {
+    position: fixed;
+    height: var(--nav-height);
+    padding: 2em 11.5%;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-    background-color:rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 1);
     transition-duration: 0.3s;
-   
+
 }
 
 
 .logo {
-    color: var(--green);
     width: min-content;
     margin: 0;
+    color: var(--green);
     cursor: pointer;
 }
 
@@ -47,33 +39,34 @@
     align-items: center;
     justify-content: center;
     font-family: var(--text-font-family);
-    font-weight: bold;
-   
+    font-weight: 500;
+
 }
 
 
 .item {
-    cursor: pointer;
     color: var(--white);
+    cursor: pointer;
     transition: color 0.3s;
 }
+
 .item:hover {
     color: var(--green-darkest);
 }
 
 .btn {
-    box-shadow: rgba(33, 35, 38, 0.05) 0px 10px 10px -10px;
+    padding: .8em 1em;
+    border-radius: 5px;
     color: var(--green);
     background-color: var(--white);
-    padding: 0.5em 1em;
-    border-radius: 10px;
+    box-shadow: rgba(33, 35, 38, 0.05) 0px 10px 10px -10px;
     transition: all 0.5s;
 }
 
 .btn:hover {
-    box-shadow: rgba(33, 35, 38, 0.2) 0px 10px 10px -10px;
     color: var(--white);
-    background-color: var(--green-darkest)
+    background-color: var(--green-darkest);
+    box-shadow: rgba(33, 35, 38, 0.2) 0px 10px 10px -10px;
 }
 
 .mobile_menu {
@@ -84,34 +77,33 @@
 
 
 .mobile_menu .list {
-    width: 100vw;
-    height: 100vh;
-    gap: 2em;
     position: absolute;
     top: 0;
     right: 0;
-    
     flex-direction: column;
-    
-    background-color: var(--green);
+    gap: 2em;
+    width: 100vw;
+    height: 100vh;
     padding-left: 5%;
+    background-color: var(--green);
     font-size: 2.2em;
-    
+
 
 }
+
 .mobile_menu .list::before {
     content: "";
-    background-color: var(--green-dark);
-    backdrop-filter: blur(50px);
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 5%;
+    background-color: var(--green-dark);
+    backdrop-filter: blur(50px);
 }
 
 .web_menu .list {
-    align-items: center;
+    align-content: center;
     gap: 1em;
 }
 
@@ -122,61 +114,65 @@
     width: 40px;
     height: 40px;
 }
+
 .menu_actions {
     position: relative;
 }
 
 .open {
     z-index: 0;
-    background-color: var(--green);
-    padding: 0.2em;
     display: flex;
     align-items: center;
+    padding: 0.2em;
     border-radius: 5px;
-    z-index: 0;
+    background-color: var(--green);
 }
 
 .close {
+    z-index: 100;
     top: 0;
     right: 0;
-    z-index: 100;
     display: flex;
     align-items: center;
     border-radius: 5px;
 }
 
 @media (min-width: 748px) {
-    .alt{
+    .alt {
         transition-delay: 0.5s;
     }
 
-.nav::before{
-    --width:60%;
-    content: "";
-    height:100%;
-    position: absolute;
-    right: 0;
-    z-index: -5;
-    background-color: var(--green-dark);
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 30px 100%);
-    opacity: 0;
-    width:50%;
-    transition: all 0.5s .5s;
-    transition-property: opacity, width;
+    .nav::before {
+        --width: 60%;
+        content: "";
+        position: absolute;
+        right: 0;
+        z-index: -5;
+        height: 100%;
+        width: 50%;
+        opacity: 0;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 30px 100%);
+        background-color: var(--green-dark);
+        transition: all 0.5s .5s;
+        transition-property: opacity, width;
+    }
+
+    .alt::before {
+        width: var(--width);
+        opacity: 1;
+        transition-delay: 0s;
+    }
+
 }
 
-.alt::before{
-    opacity: 1;
-    width:var(--width);
-    transition-delay: 0s;
-
-}
-
-}
-
-@media(min-width: 1200px){
+@media(min-width: 1200px) {
     .nav {
         padding: 32px 137px;
     }
-    
+
+    .web_menu .list {
+        align-content: center;
+        gap: 1.5em;
+    }
+
 }

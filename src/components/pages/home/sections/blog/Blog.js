@@ -1,5 +1,4 @@
 import styles from './Blog.module.css'
-import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js'
 import 'swiper/swiper-bundle.css';
 import BlogCard from '../../../../layout/blogcard/BlogCard';
@@ -19,10 +18,8 @@ function Blog() {
             <div className={styles.cards_container}>
                 <Swiper
                     className={styles.swiper}
-                    pagination={{ clickable: true }}
+                    pagination={true}
                     slidesPerView={1}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
                     breakpoints={{
                         620: {
                             slidesPerView: 2,

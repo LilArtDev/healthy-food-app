@@ -24,13 +24,9 @@
     --subtitle-font-size:clamp(16px, 8vw, 32px);
     --text-font-size: clamp(10px, 4vw, 16px);
     
-    /* --title-font-size: 48px;
-        --subtitle-font-size: 32px;
-        --text-font-size: 16px; */
-
     /* Heights */
     --nav-height: 4em;
-    --footer-height: 2em;
+    --footer-height: 3em;
 }
 
 html {
@@ -69,6 +65,13 @@ svg{
     
 }
 
+section{
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0;
+}
+
+
 ::-webkit-scrollbar-track {
     background-color: var(--green-white);
 }
@@ -80,8 +83,4 @@ svg{
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--green-darkest);
-}
-
-@media (min-width: 400px) {
-    
 }

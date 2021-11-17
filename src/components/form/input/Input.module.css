@@ -1,0 +1,48 @@
+  .form_control input {
+    display: flex;
+    width:clamp(120px, 60vw, 343px);
+    max-height:52px;
+    padding: 0.7rem;
+    border: none;
+    border-radius:5px;
+    outline: 2px solid var(--green);
+    font-size: var(--text-font-size);
+    transition: outline .3s;
+    cursor: pointer;
+  }
+
+  .form_control input:hover{
+    outline-color: var(--green-darkest);
+  }
+
+  .form_control input:focus{
+    outline-color: var(--green-darkest);
+  }
+  
+  .form_control input::placeholder {
+    color: var(--subtitle-color);
+  }
+  
+  .form_control input[type='date']{
+    font-family: var(--subtitle-font-family);
+  }
+  .form_control .short{
+    width:100%;
+    
+  }
+  .form_control .long{
+    width:100%;
+  }
+.form_control .error{
+    outline-color:rgb(248 66 64);
+  }
+
+  .form_control .error:hover{
+    outline-color:rgb(252 13 27);
+  }
+
+  .form_control .error:focus{
+    outline-color: rgb(206 10 36);
+  }
+  
+
